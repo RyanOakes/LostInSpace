@@ -12,6 +12,7 @@
 		05675B691D50169400AA3201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05675B671D50169400AA3201 /* Main.storyboard */; };
 		05675B6B1D50169400AA3201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05675B6A1D50169400AA3201 /* Assets.xcassets */; };
 		05675B6E1D50169400AA3201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05675B6C1D50169400AA3201 /* LaunchScreen.storyboard */; };
+		05675B761D5158AD00AA3201 /* InteractiveStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05675B751D5158AD00AA3201 /* InteractiveStory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		05675B6A1D50169400AA3201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05675B6D1D50169400AA3201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05675B6F1D50169400AA3201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05675B751D5158AD00AA3201 /* InteractiveStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveStory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				05675B631D50169400AA3201 /* AppDelegate.swift */,
 				05675B651D50169400AA3201 /* ViewController.swift */,
 				05675B671D50169400AA3201 /* Main.storyboard */,
+				05675B751D5158AD00AA3201 /* InteractiveStory.swift */,
 				05675B6A1D50169400AA3201 /* Assets.xcassets */,
 				05675B6C1D50169400AA3201 /* LaunchScreen.storyboard */,
 				05675B6F1D50169400AA3201 /* Info.plist */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05675B761D5158AD00AA3201 /* InteractiveStory.swift in Sources */,
 				05675B661D50169400AA3201 /* ViewController.swift in Sources */,
 				05675B641D50169400AA3201 /* AppDelegate.swift in Sources */,
 			);
@@ -293,6 +297,7 @@
 				05675B741D50169400AA3201 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

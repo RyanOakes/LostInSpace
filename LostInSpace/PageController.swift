@@ -29,9 +29,9 @@ class PageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blueColor()
         if let page = page {
-            print(page.story.text)
+            artwork.image = page.story.artwork
+            storyLabel.text = page.story.text
         }
     }
 
@@ -41,7 +41,24 @@ class PageController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        
         view.addSubview(artwork)
         artwork.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activateConstraints([
+            artwork.topAnchor.constraintEqualToAnchor(view.topAnchor),
+            artwork.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            artwork.rightAnchor.constraintEqualToAnchor(view.rightAnchor),
+            artwork.leftAnchor.constraintEqualToAnchor(view.leftAnchor)
+            ])
+        
+        view.addSubview(storyLabel)
+        storyLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints([
+            storyLabel.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor, constant: 16.0),
+            storyLabel.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor, constant: -16.0),
+            storyLabel.topAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: -48.0)
+            ])
+    
     }
 }

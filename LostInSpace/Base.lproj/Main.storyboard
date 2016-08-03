@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1434" y="341"/>
         </scene>
-        <!--View Controller-->
+        <!--Page Controller-->
         <scene sceneID="8hh-HQ-9w0">
             <objects>
-                <viewController id="fxE-n6-sHF" sceneMemberID="viewController">
+                <viewController id="fxE-n6-sHF" customClass="PageController" customModule="LostInSpace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ve6-SG-oQI"/>
                         <viewControllerLayoutGuide type="bottom" id="VCP-Ax-e7y"/>

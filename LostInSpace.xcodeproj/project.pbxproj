@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05285AF41D524B8D00BC33A8 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05285AF31D524B8D00BC33A8 /* PageController.swift */; };
 		05675B641D50169400AA3201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05675B631D50169400AA3201 /* AppDelegate.swift */; };
 		05675B661D50169400AA3201 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05675B651D50169400AA3201 /* ViewController.swift */; };
 		05675B691D50169400AA3201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05675B671D50169400AA3201 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05285AF31D524B8D00BC33A8 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		05675B601D50169400AA3201 /* LostInSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostInSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05675B631D50169400AA3201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05675B651D50169400AA3201 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				05675B651D50169400AA3201 /* ViewController.swift */,
 				05675B671D50169400AA3201 /* Main.storyboard */,
 				05675B751D5158AD00AA3201 /* InteractiveStory.swift */,
+				05285AF31D524B8D00BC33A8 /* PageController.swift */,
 				05675B6A1D50169400AA3201 /* Assets.xcassets */,
 				05675B6C1D50169400AA3201 /* LaunchScreen.storyboard */,
 				05675B6F1D50169400AA3201 /* Info.plist */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05285AF41D524B8D00BC33A8 /* PageController.swift in Sources */,
 				05675B761D5158AD00AA3201 /* InteractiveStory.swift in Sources */,
 				05675B661D50169400AA3201 /* ViewController.swift in Sources */,
 				05675B641D50169400AA3201 /* AppDelegate.swift in Sources */,

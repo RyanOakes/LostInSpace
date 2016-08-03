@@ -50,6 +50,7 @@ extension Story {
     }
 }
 
+
 class Page {
     let story: Story
     
@@ -62,6 +63,7 @@ class Page {
         self.story = story
     }
 }
+
 
 extension Page {
     
@@ -79,6 +81,32 @@ extension Page {
             secondChoice = (title, page)
         }
         return page
+    }
+}
+
+
+struct Adventure {
+    static func story(name: String) -> Page {
+        let returnTrip = Page(story: .ReturnTrip)
+        let touchdown = returnTrip.addChoice("Stop and Investigate", story: .TouchDown)
+        let homeward = returnTrip.addChoice("Continue Home to Earth", story: .Homeward)
+        
+        let rover = touchdown.addChoice("Explore the Rover", story: .Rover)
+        let crate = touchdown.addChoice("Open the Crate", story: .Crate)
+        
+        homeward.addChoice("Head back to Mars", page: touchdown)
+        let home = homeward.addChoice("Continue Home to Earth", story: .Home)
+        
+        let cave = rover.addChoice("Explore the Coordinates", story: .Cave)
+        rover.addChoice("Return to Earth", page: home)
+        
+        cave.addChoice("Continue towards faint light", story: .Droid)
+        cave.addChoice("Refill the ship and explore the rover", page: rover)
+        
+        crate.addChoice("Explore the Rover", page: rover)
+        crate.addChoice("Use the key", story: .Monster)
+        
+        return returnTrip
     }
 }
 

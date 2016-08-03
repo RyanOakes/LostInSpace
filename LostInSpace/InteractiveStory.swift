@@ -50,7 +50,6 @@ extension Story {
     }
 }
 
-
 class Page {
     let story: Story
     
@@ -64,7 +63,6 @@ class Page {
     }
 }
 
-
 extension Page {
     
     func addChoice(title: String, story: Story) -> Page {
@@ -72,7 +70,7 @@ extension Page {
         return addChoice(title, page: page)
     }
     
-    func addChoice(title: String, page: Page) -> Page{
+    func addChoice(title: String, page: Page) -> Page {
         switch (firstChoice, secondChoice) {
         case (.Some, .Some): break
         case (.None, .None), (.None, .Some):
@@ -80,17 +78,16 @@ extension Page {
         case (.Some, .None):
             secondChoice = (title, page)
         }
+        
         return page
     }
 }
 
-
 struct Adventure {
-    static func story(name: String) -> Page {
+    static var story: Page {
         let returnTrip = Page(story: .ReturnTrip)
         let touchdown = returnTrip.addChoice("Stop and Investigate", story: .TouchDown)
         let homeward = returnTrip.addChoice("Continue Home to Earth", story: .Homeward)
-        
         let rover = touchdown.addChoice("Explore the Rover", story: .Rover)
         let crate = touchdown.addChoice("Open the Crate", story: .Crate)
         

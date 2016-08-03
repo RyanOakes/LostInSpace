@@ -39,6 +39,15 @@ class PageController: UIViewController {
             attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
             
             storyLabel.attributedText = attributedString
+            
+            if let firstChoice = page.firstChoice {
+                firstChoiceButton.setTitle(firstChoice.title, forState: .Normal)
+            } else {
+                firstChoiceButton.setTitle("Play again", forState: .Normal)
+            }
+            if let secondChoice = page.secondChoice {
+                secondChoiceButton.setTitle(secondChoice.title, forState: .Normal)
+            }
         }
     }
 
@@ -62,11 +71,59 @@ class PageController: UIViewController {
         
         view.addSubview(storyLabel)
         storyLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activateConstraints([
             storyLabel.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor, constant: 16.0),
             storyLabel.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor, constant: -16.0),
             storyLabel.topAnchor.constraintEqualToAnchor(view.centerYAnchor, constant: -48.0)
             ])
+        
+        view.addSubview(firstChoiceButton)
+        firstChoiceButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints([
+            firstChoiceButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            firstChoiceButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -80.0)
+            ])
+        
+        view.addSubview(secondChoiceButton)
+        secondChoiceButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints([
+            secondChoiceButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            secondChoiceButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -32)
+            ])
     
     }
+    
+    
+    func loadFirstChoice() {
+        if let page = page, firstChoice = page.firstChoice {
+            let nextPage = firstChoice.page
+            let pageController = PageController(page: nextPage)
+            
+            navigationController?.pushViewController(pageController, animated: true)
+        }
+    }
+    
+    func loadSecondVhoice() {
+        if let page = page, secondChoice = page.secondChoice {
+            let nextPage = secondChoice.page
+            let pageController = PageController(page: nextPage)
+            
+            navigationController?.pushViewController(pageController, animated: true)
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

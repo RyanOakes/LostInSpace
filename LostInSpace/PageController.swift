@@ -25,10 +25,12 @@ class PageController: UIViewController {
         self.page = page
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .whiteColor()
         
+        // Do any additional setup after loading the view.
         if let page = page {
             artwork.image = page.story.artwork
             let attributedString = NSMutableAttributedString(string: page.story.text)
@@ -40,27 +42,31 @@ class PageController: UIViewController {
             
             storyLabel.attributedText = attributedString
             
+            
             if let firstChoice = page.firstChoice {
                 firstChoiceButton.setTitle(firstChoice.title, forState: .Normal)
+                firstChoiceButton.addTarget(self, action: #selector(PageController.loadFirstChoice), forControlEvents: .TouchUpInside)
             } else {
-                firstChoiceButton.setTitle("Play again", forState: .Normal)
+                firstChoiceButton.setTitle("Play Again", forState: .Normal)
+                firstChoiceButton.addTarget(self, action: #selector(PageController.playAgain), forControlEvents: .TouchUpInside)
             }
+            
+            
             if let secondChoice = page.secondChoice {
                 secondChoiceButton.setTitle(secondChoice.title, forState: .Normal)
+                secondChoiceButton.addTarget(self, action: #selector(PageController.loadSecondChoice), forControlEvents: .TouchUpInside)
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func viewWillLayoutSubviews() {
-        
         view.addSubview(artwork)
         artwork.translatesAutoresizingMaskIntoConstraints = false
-        storyLabel.numberOfLines = 0
         
         NSLayoutConstraint.activateConstraints([
             artwork.topAnchor.constraintEqualToAnchor(view.topAnchor),
@@ -71,6 +77,7 @@ class PageController: UIViewController {
         
         view.addSubview(storyLabel)
         storyLabel.translatesAutoresizingMaskIntoConstraints = false
+        storyLabel.numberOfLines = 0
         
         NSLayoutConstraint.activateConstraints([
             storyLabel.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor, constant: 16.0),
@@ -80,6 +87,7 @@ class PageController: UIViewController {
         
         view.addSubview(firstChoiceButton)
         firstChoiceButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activateConstraints([
             firstChoiceButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
             firstChoiceButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -80.0)
@@ -87,13 +95,12 @@ class PageController: UIViewController {
         
         view.addSubview(secondChoiceButton)
         secondChoiceButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activateConstraints([
             secondChoiceButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
-            secondChoiceButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -32)
+            secondChoiceButton.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -32.0)
             ])
-    
     }
-    
     
     func loadFirstChoice() {
         if let page = page, firstChoice = page.firstChoice {
@@ -104,7 +111,7 @@ class PageController: UIViewController {
         }
     }
     
-    func loadSecondVhoice() {
+    func loadSecondChoice() {
         if let page = page, secondChoice = page.secondChoice {
             let nextPage = secondChoice.page
             let pageController = PageController(page: nextPage)
@@ -112,7 +119,30 @@ class PageController: UIViewController {
             navigationController?.pushViewController(pageController, animated: true)
         }
     }
+    
+    func playAgain() {
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

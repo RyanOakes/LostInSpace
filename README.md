@@ -4,7 +4,7 @@
 
 Intro #1            |  Sample Story Page #2
 :-------------------------:|:-------------------------:
-![](LostInSpace/Assets.xcassets/1.png)  |  ![](LostInSpace/Assets.xcassets/2.png)
+![](LostInSpace/Assets.xcassets/1.png)  |  ![](LostInSpace/Assets.xcassets/3.png)
 
 ***
 

@@ -16,7 +16,7 @@ Intro #1            |  Sample Story Page #2
 
 ***
 
-####The app required a more in-depth dive into Swift, hitting such topics as navigation controllers, hierarchical data models, and custom views. User input (the main character's name dynamically changes in the story depending the nomenclature choice of the user) and sound effects were also a couple more of the complex wirings I explored. In addition, it helps reinforce my grasp of the basics: data types, control flow, conditionals, sound MVC practices, version control, and the various intricacies of using Apple's **IDE Xcode**.
+#### The app required a more in-depth dive into Swift, hitting such topics as navigation controllers, hierarchical data models, and custom views. User input (the main character's name dynamically changes in the story depending the nomenclature choice of the user) and sound effects were also a couple more of the complex wirings I explored. In addition, it helps reinforce my grasp of the basics: data types, control flow, conditionals, sound MVC practices, version control, and the various intricacies of using Apple's **IDE Xcode**.
 
 ***
 
